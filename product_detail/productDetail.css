@@ -1,0 +1,164 @@
+html {
+    font-size: 62.5%;
+}
+:root {
+    --primary_color: #E75C6B;
+    --sub_color: #FFEAE9;
+}
+
+.line {
+    background-color: var(--primary_color);
+    height: 1px;
+    margin: 5px 0 5px 0;
+}
+
+.main {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+}
+/* .left-container {
+    border: 2px solid var(--primary_color);
+} */
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.product-title {
+    color: var(--primary_color);
+    font-size: 2.5rem;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+}
+
+/* CSS cho tất cả IMG */
+.left-container img {
+    width: 60%;
+    display: block;
+}
+/* Nếu chiều cao của box img không đủ chứa thì ẩn đi */
+.img-display {
+    overflow: hidden;
+    border: 3px solid var(--primary_color);
+}
+.img-showcase {
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease;
+    /* Chưa thấy gì xảy ra */
+}
+.img-showcase img {
+    min-width: 100%; /*cho hiện 1 hình lớn 1 lần*/
+}
+.img-select {
+    display: flex;
+}
+.img-item {
+    margin: 3px;
+    margin-right: 0;
+}
+.img-item:hover{
+    opacity: 0.8;
+    /* Khi hover vô thì có độ mờ mờ */
+}
+
+.right-container {
+    margin-left: 20px;
+    /* border: 2px solid var(--primary_color); */
+    padding: 10px;
+}
+
+/* CSS cho giá cũ màu xám gạch ngang */
+.old-price {
+    color: gray;
+    text-decoration: line-through;
+}
+/* * CSS button Số lượng */
+/* CHo số lượng và button thẳng hàng */
+.quantity {
+    display: flex;
+}
+.quantity-box {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: 30px;
+}
+
+.quantity-box button,
+.quantity-box input {
+    height: 35px;
+    width: 35px;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-weight: bold;
+    background-color: #f1f1f1;
+    color: #333333;
+    font-size: 16px;
+    padding: 0;
+}
+
+.quantity-decrease {
+    border-radius: 50% 0 0 50%;
+    cursor: pointer;
+}
+
+.quantity-increase {
+    border-radius: 0 50% 50% 0;
+    cursor: pointer;
+}
+/* CSS cho button */
+
+.button {
+    display: flex;
+}
+.add, .buy-now {
+    display: flex;
+    border: 1px solid var(--primary_color);
+    border-radius: 20px;
+    background-color: var(--sub_color);
+    width: 200px;
+    padding: 5px;
+    margin-top: 10px;
+}
+.add img {
+    width: 18px;
+    height: 18px;
+}
+
+.add button , .buy-now button{
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+.add:hover {
+    background-color: var(--primary_color);
+}
+.buy-now:hover {
+    background-color: var(--primary_color);
+}
+
+.buy-now {
+    margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+

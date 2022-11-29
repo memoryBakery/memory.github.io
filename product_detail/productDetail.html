@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm</title>
+    <link rel="stylesheet" href="productDetail.css">
+    <script src="./productDetail.js"></script>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="main">
+        <div class="product-container">
+            <!-- Bên trái img-->
+            <div class="left-container">
+                <div class="img-display">
+                    <div class="img-showcase">
+                        <img src="./img/11.png" alt="apple">
+                        <img src="./img/12.png" alt="apple">
+                        <img src="./img/13.png" alt="apple">
+                        <img src="./img/14.png" alt="apple">
+                    </div>
+                </div>
+                <div class="img-select">
+                    <div class="img-item">
+                        <a href="#" data-id="1">
+                            <img src="./img/11.png" alt="apple">
+                        </a>
+                    </div>
+                    <div class="img-item">
+                        <a href="#" data-id="2">
+                            <img src="./img/12.png" alt="apple">
+                        </a>
+                    </div>
+                    <div class="img-item">
+                        <a href="#" data-id="3">
+                            <img src="./img/13.png" alt="apple">
+                        </a>
+                    </div>
+                    <div class="img-item">
+                        <a href="#" data-id="4">
+                            <img src="./img/14.png" alt="apple">
+                        </a>
+                    </div>
+                </div>
+                 <!-- Java cho bấm sản phẩm sẽ hiển lên -->
+                 <script>
+                    const imgs = document.querySelectorAll('.img-select a');
+                    const imgBtns = [...imgs];
+                    let imgId = 1;
+                    
+                    imgBtns.forEach((imgItem) => {
+                        imgItem.addEventListener('click', (event) => {
+                            event.preventDefault();
+                            imgId = imgItem.dataset.id;
+                            slideImage();
+                        });
+                    });
+                    
+                    function slideImage() {
+                        const displayWidth = document.querySelector('.img-showcase img:first-child').clientWidth;
+                    
+                        document.querySelector('.img-showcase').style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
+                    }
+                    window.addEventListener('resize', slideImage);
+                </script>
+            </div>
+
+            <div class="right-container">
+                <div class="product-title title">RAINBOW CUPCAKE SWIRL</div>
+                <div class="rating"></div>
+                <div class="product-price">
+                    <span class="old-price">200.000 VNĐ</span> 180.000 VNĐ
+                </div>
+
+                <div class="line"></div>
+                <div class="product-description">
+                    <h3 class="title">Mô tả sản phẩm</h3>
+                    <p>Bánh thơm nồng quyện cùng socola vụn rải đều khắp bánh. Vừa mềm mịn lại bùi béo ngọt thanh. Sản phẩm từ thiên nhiên: bột mì hảo hạng, hương hoa cúc tự nhiên, bơ thực vật cao cấp, đường kính, mật ong, trứng, sữa. Khối lượng bơ rất lớn trong thành phần của bánh nên nó giúp cho bánh khi ăn luôn có sự béo ngậy, đậm đà nhưng không hề bị ngấy. 
+                    </p>
+                </div>
+
+                <!-- Button số lượng -->
+                <div class="quantity">
+                    <div class="title"><p style="margin: 5px;">Số lượng</p> </div>
+                    <div class="quantity-box">
+                        <button class="quantity-decrease" id="decrease" onclick="decreaseValue1(quantity1.value)">-</button>
+                        <input type="text" value="1" class="quantity-input" id="quantity1">
+                        <button class="quantity-increase" id="increase" onclick="increaseValue1(quantity1.value)">+</button>
+                    </div>
+                </div>
+                <div class="button">
+                    <div class="add">
+                        <img src="./img/cart.png" alt="">
+                        <button onclick="Check1(quantity1.value)">Thêm vào giỏ hàng</button>
+                    </div>
+
+                    <div class="buy-now">
+                        <button onclick="Check1(quantity1.value)">Mua ngay</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="product-review">
+            <h3 class="title">Đánh giá sản phẩm</h3>
+        </div>
+    </div>
+    
+    <div class="footer"></div>
+    
+</body>
+</html>
